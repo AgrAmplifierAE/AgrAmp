@@ -58,7 +58,7 @@ Three csv files will be generated in directory __./output__ once script executed
 The file with 'def_fl_trust' in its filename (note as file2) corresponding to the AGR FLTrust [1] (Sec 4.3.3, line 654) while that with 'def_p-trust' corresponding to the AGR FLTrust_Amp+ (Sec 4.3.3, line 660).
 
 To acquire the final value, compute the evaluation metric according to Sec 4.4.1, equation (1). The attack starts at round 50 so the T0 = 50 and T1 = 200, and we record every 10 rounds. Make difference of the attacked test accuracy (file2) and the baseline test accuracy (file1) after round 50 (the data is only meaningful after attack happens).
-Now there are 16 differences we have from round 50 to round 200, sum the difference up and divide by 16. This will return the averaged test accuracy loss caused by attack under the protection of the AGR.
+Now there are 16 differences we have from round 50 to round 200, sum the difference up and divide by 16. This will return the averaged test accuracy difference (\mathcal{L}) caused by attack under the protection of the AGR.
 
 
 ## Requirements
