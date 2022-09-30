@@ -4,11 +4,15 @@
 To run the experiments, please run *dataset*_script.py, replace *dataset* with the dataset to experiment with
 The code can execute directly without downloading dataset file. List of runnable script files
 * location_script.py (Refer to  Sec 4.1 LOCATION30, line 537 of the original paper)
- * Approximately need 300 sec for each experiment, can be run on CPU with 8GB RAM
+  * Approximately need 300 sec for each experiment, can be run on CPU with 8GB RAM
 * cifar_script.py (Refer to Sec 4.1 CIFAR-10, line 529 of the original paper)
+  * Approximately need 500 sec for each experiment, can be run on CPU with 16GB RAM
 * mnist_script.py (Refer to Sec 4.1 MNIST, line 534 of the original paper)
+  * Approximately need 500 sec for each experiment, can be run on CPU with 16GB RAM
 * purchase_script.py (Refer to Sec 4.1 PURCHASE100, line 543 of the original paper)
+  * Approximately need 3000 sec for each experiment, can be run on CPU with 16GB RAM
 * texas_script.py (Refer to Sec 4.1 TEXAS100, line 550 of the original paper)
+  * Approximately need 7200 sec for each experiment, can be run on CPU with 64GB RAM
 
 E.g. in a LINUX environment, to execute the *LOCATION30*
 experiment, please input the following command under the source code path
