@@ -13,6 +13,7 @@ The code can execute directly without downloading dataset file. List of runnable
   * Approximately need 3000 sec for each experiment, can be run on CPU with 16GB RAM
 * texas_script.py (Refer to Sec 4.1 TEXAS100, line 550 of the original paper)
   * Approximately need 7200 sec for each experiment, can be run on CPU with 64GB RAM
+
 __Note: the CPU is assumed to be an 8th-gen Core i7 or higher.__
 
 E.g. in a LINUX environment, to execute the *LOCATION30*
