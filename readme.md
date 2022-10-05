@@ -1,12 +1,12 @@
 # AgrAmplifier
 
 ## Code structure
-To run the experiments, please run *dataset*_script.py, replace *dataset* with the dataset to experiment with
+To run the experiments, please run *dataset*_script.py, replace *dataset* with the dataset to experiment with.
 The code can execute directly without downloading dataset file. List of runnable script files
 * location_script.py (Refer to  Sec 4.1 LOCATION30, line 537 of the original paper)
   * Approximately need 3000 sec for each experiment
 * cifar_script.py (Refer to Sec 4.1 CIFAR-10, line 529 of the original paper)
-  * Approximately need 5700 sec for each experimen
+  * Approximately need 5700 sec for each experiment
 * mnist_script.py (Refer to Sec 4.1 MNIST, line 534 of the original paper)
   * Approximately need 8000 sec for each experiment
 * purchase_script.py (Refer to Sec 4.1 PURCHASE100, line 543 of the original paper)
