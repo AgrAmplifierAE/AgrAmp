@@ -1,13 +1,20 @@
 # AgrAmplifier
 
 ## Code structure
-To run the experiments, please run *dataset*_script.py, replace *dataset* with the dataset to experiment with
+To run the experiments, please run *dataset*_script.py, replace *dataset* with the dataset to experiment with.
 The code can execute directly without downloading dataset file. List of runnable script files
 * location_script.py (Refer to  Sec 4.1 LOCATION30, line 537 of the original paper)
+  * Approximately need 3000 sec for each experiment
 * cifar_script.py (Refer to Sec 4.1 CIFAR-10, line 529 of the original paper)
+  * Approximately need 5700 sec for each experiment
 * mnist_script.py (Refer to Sec 4.1 MNIST, line 534 of the original paper)
+  * Approximately need 8000 sec for each experiment
 * purchase_script.py (Refer to Sec 4.1 PURCHASE100, line 543 of the original paper)
+  * Approximately need 18000 sec for each experiment
 * texas_script.py (Refer to Sec 4.1 TEXAS100, line 550 of the original paper)
+  * Approximately need 24000 sec for each experiment
+
+__Note: the script is not optimized for CUDA, so recommended to run with CPU device. CPU is assumed to be an AMD Rayzen 4800H or higher, RAM working with DDR4-3200 16GB. With a higher spec device, the time consumption can be significantly reduced. On some LINUX device, attempts to run TEXAS100 and PURCHASE may fail due to limited RAM, recommended to run with 64GB or higher.__
 
 E.g. in a LINUX environment, to execute the *LOCATION30*
 experiment, please input the following command under the source code path
