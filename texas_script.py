@@ -3,7 +3,7 @@ import pandas as pd
 from FL_models import *
 import constants
 
-data = np.load("./texas100.npz")
+data = np.load("datasets/texas100.npz")
 
 imgs = data['features']
 labels = data['labels']
@@ -33,11 +33,15 @@ Ph = 50
 hidden = 1024
 # Fraction of malicious members
 malicious_factor = 0.3
+# Experimented attack
+att_experimented = ["mislead", "min_max", "label_flip", "grad_ascent"]
+# Experimented AGR, details in constants.py
+agr_experimented = [constants.fang, constants.p_fang]
 """
 End of editable block 
 """
-for att_mode in constants.att_modes:
-    for exp in constants.experiments:
+for att_mode in att_experimented:
+    for exp in agr_experimented:
         cgd = FL_torch(
             num_iter=num_iter,
             train_imgs=train_imgs,

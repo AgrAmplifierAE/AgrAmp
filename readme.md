@@ -43,15 +43,24 @@ To acquire experiment data shown in Table 1 (line 768 - 798), there are several 
 2. Update the editable block of the script according to desired hyperparameters. You may leave it as is to reproduce Table 1 in the original paper
 3. Choose attack mode, e.g. Mislead (L+G in Table 1, line 790)
 4. Identify the AGR need to be addressed, e.g. FLTrust and FLTrust_Amp+ (column T & T+ in Table 1)
-5. Update the outer loop of the experiment script according to the selected attack and defense (with baseline included, see below example). To adjust the experiment to run, update the below part in the experiment script with corresponding value in __constants.py__, comments provided in __constants.py__.
-   * for att_mode in ...
-   * for exp in ...
+5. Update the experimented attack and experimented AGR in editable block of the script according to the selected attack and defense (with baseline included, see below example). The values shall come from __constants.py__, comments provided in __constants.py__.
+   * att_experimented = []
+   * agr_experimented = []
 
-E.g. if you need to reproduce column T and T+, line 790 of Table 1, you first go to __purchase_script.py__, update outer loop of the script into
+E.g. if you need to reproduce column T and T+ with <L+G> attack, line 790 of Table 1, you first go to __purchase_script.py__, update editable block into
 ```
-for att_mode in ['mislead']:
-  for exp in [constants.baseline, constants.fl_trust, constants.p_trust]:
-    ...
+# Number of iterations (communication rounds)
+num_iter = 201
+# Number of malicious participants
+Ph = 50
+# Size of hidden layer
+hidden = 1024
+# Fraction of malicious members
+malicious_factor = 0.3
+# Experimented attack
+att_experimented = ["mislead"]
+# Experimented AGR, details in constants.py
+agr_experimented = [constants.baseline, constants.fang, constants.p_fang]
 ```
 Then run the script.
 Three csv files will be generated in directory __./output__ once script executed. One file with containing 'start_1000' in its filename is the baseline (note as file1). (There are overall 200 rounds but constants.baseline tell the script to start attack on round 1000). The rest two are those attacked and protected by corresponding AGR. 

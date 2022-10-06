@@ -2,7 +2,7 @@ import numpy as np
 from FL_models import *
 import constants
 
-data = np.load("./gnome.npz")
+data = np.load("datasets/gnome.npz")
 
 train_imgs = data['features']
 train_labels = data['labels']
@@ -32,11 +32,15 @@ Ph = 50
 hidden = 1024
 # Fraction of malicious members
 malicious_factor = 0.3
+# Experimented attack
+att_experimented = ["mislead", "min_max", "label_flip", "grad_ascent"]
+# Experimented AGR, details in constants.py
+agr_experimented = [constants.fang, constants.p_fang]
 """
 End of editable block 
 """
-for att_mode in ["mislead", "min_max", "label_flip", "grad_ascent"]:
-    for exp in [constants.fang, constants.p_fang]:
+for att_mode in att_experimented:
+    for exp in agr_experimented:
         cgd = FL_torch(
             num_iter=num_iter,
             train_imgs=train_imgs,
